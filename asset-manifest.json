@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/chefkartAssignment/static/css/main.49955cc3.css",
+    "main.js": "/chefkartAssignment/static/js/main.07ccb4e9.js",
+    "static/js/787.82efc8f9.chunk.js": "/chefkartAssignment/static/js/787.82efc8f9.chunk.js",
+    "index.html": "/chefkartAssignment/index.html",
+    "main.49955cc3.css.map": "/chefkartAssignment/static/css/main.49955cc3.css.map",
+    "main.07ccb4e9.js.map": "/chefkartAssignment/static/js/main.07ccb4e9.js.map",
+    "787.82efc8f9.chunk.js.map": "/chefkartAssignment/static/js/787.82efc8f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.49955cc3.css",
+    "static/js/main.07ccb4e9.js"
+  ]
+}
