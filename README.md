@@ -1,4 +1,5 @@
 # ChefKart Data Table React Component
+![image](https://user-images.githubusercontent.com/62640364/207127625-a6ef4e85-691c-4d5f-80d7-bd97b8b76089.png)
 
 ## Available Scripts
 
