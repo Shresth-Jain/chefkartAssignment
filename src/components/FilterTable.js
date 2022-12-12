@@ -1,65 +1,6 @@
 import React from 'react';
 import { Table } from 'antd';
 import data from './mockData'
-// import type { ColumnsType, TableProps } from 'antd/es/table';
-
-// const dataSource = [
-//   {
-//     key: '1',
-//     name: 'Mike',
-//     age: 32,
-//     address: '10 Downing Street',
-//   },
-//   {
-//     key: '2',
-//     name: 'John',
-//     age: 42,
-//     address: '10 Downing Street',
-//   },
-// ];
-
-// const columns = [
-//   {
-//     title: 'Name',
-//     dataIndex: 'name',
-//     key: 'name',
-//   },
-//   {
-//     title: 'Age',
-//     dataIndex: 'age',
-//     key: 'age',
-//   },
-//   {
-//     title: 'Address',
-//     dataIndex: 'address',
-//     key: 'address',
-//   },
-// ];
-/**
-id
-first_name
-last_name
-email
-gender
-ip_address
-airport code
-time
-status
-mobile
-area
-show
-edit
-
-sort failing in
-ip address
-time
-
-
-Problem
-not showing boolean value
-
-
-*/ 
  
 const columns = [
 {
@@ -107,7 +48,15 @@ const columns = [
   {
     title: 'Status',
     dataIndex: 'status',
-    sorter: (a, b) => a.status.localeCompare(b.status)
+    sorter: (a, b) => a.status.localeCompare(b.status),
+    render(text, record) {
+      return {
+        props: {
+          style: { background: text==='false' ? "red" : "green" }
+        },
+        children: <div>{text}</div>
+      };
+    }
   },
   {
     title: 'Mobile',
@@ -126,19 +75,28 @@ const columns = [
     dataIndex: 'show',
     // defaultSortOrder: 'descend',
     sorter: (a, b) => a.show.localeCompare(b.show),
-    getProps: (state, rowInfo, column) => {
+    render(text, record) {
       return {
-          style: {
-              background: rowInfo && rowInfo.row.show==="true" ? 'green' : "red",
-          },
+        props: {
+          style: { background: text==='false' ? "red" : "green" }
+        },
+        children: <div>{text}</div>
       };
-  },
+    }
   },
   {
     title: 'Edit',
     dataIndex: 'edit',
     // defaultSortOrder: 'descend',
-    sorter: (a, b) => a.edit.localeCompare(b.edit)
+    sorter: (a, b) => a.edit.localeCompare(b.edit),
+    render(text, record) {
+      return {
+        props: {
+          style: { background: text==='false' ? "red" : "green" }
+        },
+        children: <div>{text}</div>
+      };
+    }
   }
 ];
 
@@ -160,7 +118,7 @@ export default function FilterTable() {
     
     <div className="FilterTable">
         {/* <Table columns={columns} dataSource={data} onChange={onChange}/>; */}
-        <Table columns={columns} dataSource={data}/>;
+        <Table columns={columns} dataSource={data} />;
     </div>
   );
 }
